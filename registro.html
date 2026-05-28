@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro - GlobalImport S.A.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <div class="brand">GlobalImport S.A.</div>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#services">Servicios</a>
+        <a href="index.html#contact">Contacto</a>
+        <a href="registro.html">Registro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding:32px 16px 80px;">
+    <h1>Registro</h1>
+    <p class="lead">Completa tus datos para registrarte en GlobalImport S.A.</p>
+
+    <form id="registroForm">
+      <!-- Sección A: Datos Personales -->
+      <section class="form-section" style="background:#fff;padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+        <h2>Sección A — Datos Personales</h2>
+        <div class="form-grid">
+          <label>
+            Nombre completo *
+            <input type="text" name="nombre" required>
+          </label>
+
+          <label>
+            Fecha de nacimiento *
+            <input type="date" name="nacimiento" required>
+          </label>
+
+          <label>
+            Rut / Número de documento *
+            <input type="text" name="documento" required>
+          </label>
+
+          <label>
+            Género
+            <select name="genero">
+              <option value="">-- Seleccionar --</option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+              <option>No binario</option>
+              <option>Prefiero no decir</option>
+            </select>
+          </label>
+
+          <label style="grid-column:1 / -1">
+            Nacionalidad
+            <select name="nacionalidad">
+              <option value="">-- Seleccionar país --</option>
+              <option>Argentina</option>
+              <option>Brasil</option>
+              <option>Chile</option>
+              <option>Colombia</option>
+              <option>Perú</option>
+              <option>Uruguay</option>
+              <option>España</option>
+              <option>México</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- Sección B: Contacto y Acceso -->
+      <section class="form-section" style="background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+        <h2>Sección B — Datos de Contacto y Acceso</h2>
+        <div class="form-grid">
+          <label>
+            Correo electrónico *
+            <input type="email" name="email" id="email" required>
+          </label>
+
+          <label>
+            Confirmar correo electrónico *
+            <input type="email" name="email2" id="email2" required>
+          </label>
+
+          <label>
+            Contraseña *
+            <input type="password" name="password" id="password" required>
+          </label>
+
+          <label>
+            Confirmar contraseña *
+            <input type="password" name="password2" id="password2" required>
+          </label>
+
+          <div style="grid-column:1 / -1">
+            <label>
+              Teléfono *
+              <input type="tel" name="telefono" placeholder="+54 9 11 1234-5678" required>
+            </label>
+          </div>
+
+          <div style="grid-column:1 / -1">
+            <small>Indicador de fuerza de contraseña:</small>
+            <div id="pwStrength" style="height:10px;background:#e6e9ee;border-radius:6px;overflow:hidden;margin-top:6px">
+              <div id="pwBar" style="width:6%;height:100%;background:#ff8a00;transition:width .18s ease"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección C: Dirección de Entrega -->
+      <section class="form-section" style="background:#fff;padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+        <h2>Sección C — Dirección de Entrega</h2>
+        <div class="form-grid">
+          <label>
+            País *
+            <select name="pais_entrega" required>
+              <option value="">-- Seleccionar país --</option>
+              <option>Argentina</option>
+              <option>Brasil</option>
+              <option>Chile</option>
+              <option>Colombia</option>
+              <option>Perú</option>
+              <option>Uruguay</option>
+              <option>España</option>
+              <option>México</option>
+            </select>
+          </label>
+
+          <label>
+            Provincia / Estado *
+            <input type="text" name="provincia" required>
+          </label>
+
+          <label>
+            Ciudad *
+            <input type="text" name="ciudad" required>
+          </label>
+
+          <label>
+            Calle y número *
+            <input type="text" name="calle" required>
+          </label>
+
+          <label>
+            Código postal *
+            <input type="text" name="postal" required>
+          </label>
+
+          <label>
+            Piso y departamento
+            <input type="text" name="piso">
+          </label>
+
+          <label style="grid-column:1 / -1">
+            Referencia o instrucciones adicionales (max 200 caracteres)
+            <textarea name="referencia" maxlength="200" rows="3"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <!-- Sección D: Preferencias y Términos -->
+      <section class="form-section" style="background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+        <h2>Sección D — Preferencias y Términos</h2>
+        <div class="form-grid">
+          <div style="grid-column:1 / -1">
+            <strong>Categorías de interés</strong>
+            <div>
+              <label><input type="checkbox" name="cat" value="electronica"> Electrónica</label>
+              <label style="margin-left:12px"><input type="checkbox" name="cat" value="indumentaria"> Indumentaria</label>
+              <label style="margin-left:12px"><input type="checkbox" name="cat" value="hogar"> Hogar</label>
+              <label style="margin-left:12px"><input type="checkbox" name="cat" value="otros"> Otros</label>
+            </div>
+          </div>
+
+          <div style="grid-column:1 / -1">
+            <strong>Tipo de cliente</strong>
+            <div>
+              <label><input type="radio" name="tipo" value="consumidor" checked> Consumidor final</label>
+              <label style="margin-left:12px"><input type="radio" name="tipo" value="revendedor"> Revendedor</label>
+              <label style="margin-left:12px"><input type="radio" name="tipo" value="empresa"> Empresa</label>
+            </div>
+          </div>
+
+          <label>
+            ¿Cómo nos conociste?
+            <select name="conocio">
+              <option>Redes sociales</option>
+              <option>Recomendación</option>
+              <option>Búsqueda web</option>
+              <option>Publicidad</option>
+              <option>Otro</option>
+            </select>
+          </label>
+
+          <label style="display:flex;align-items:center;gap:8px">
+            <input type="checkbox" name="newsletter"> Suscribirme al newsletter
+          </label>
+
+          <label style="display:flex;align-items:center;gap:8px">
+            <input type="checkbox" id="aceptaTerminos" required> Acepto los <a href="#" onclick="alert('Términos ficticios.');return false;">Términos y Condiciones</a>
+          </label>
+
+          <label style="display:flex;align-items:center;gap:8px">
+            <input type="checkbox" id="aceptaPrivacidad" required> Acepto la <a href="#" onclick="alert('Política de privacidad ficticia.');return false;">Política de Privacidad</a>
+          </label>
+        </div>
+      </section>
+
+      <div style="text-align:center;margin-top:8px">
+        <button type="submit" class="btn primary" style="min-width:180px">Registrarme</button>
+        <button type="reset" class="btn" style="min-width:160px;margin-left:12px">Limpiar formulario</button>
+      </div>
+
+      <p style="text-align:center;margin-top:12px"><a href="#">Ya tengo cuenta, iniciar sesión</a></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>GlobalImport S.A. © <span id="year">2026</span></div>
+      <div class="socials">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Password strength simple indicator
+    const pw = document.getElementById('password');
+    const pwBar = document.getElementById('pwBar');
+    pw.addEventListener('input', () => {
+      const val = pw.value;
+      let score = 0;
+      if (val.length >= 8) score += 30;
+      if (/[A-Z]/.test(val)) score += 20;
+      if (/[0-9]/.test(val)) score += 25;
+      if (/[^A-Za-z0-9]/.test(val)) score += 25;
+      const width = Math.min(100, score);
+      pwBar.style.width = width + '%';
+      if (width < 40) pwBar.style.background = '#ff4d4f';
+      else if (width < 70) pwBar.style.background = '#ff8a00';
+      else pwBar.style.background = '#16a34a';
+    });
+
+    // Simple form validation for matching fields
+    const form = document.getElementById('registroForm');
+    form.addEventListener('submit', (e) => {
+      const email = document.getElementById('email').value.trim();
+      const email2 = document.getElementById('email2').value.trim();
+      const password = document.getElementById('password').value;
+      const password2 = document.getElementById('password2').value;
+      if (email !== email2) {
+        e.preventDefault();
+        alert('Los correos no coinciden. Por favor verifícalos.');
+        return;
+      }
+      if (password !== password2) {
+        e.preventDefault();
+        alert('Las contraseñas no coinciden. Por favor verifícalas.');
+        return;
+      }
+      // Required checkboxes already enforced by 'required' attribute for terms/privacy
+      alert('Formulario validado (simulación). Datos listos para envío.');
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>
