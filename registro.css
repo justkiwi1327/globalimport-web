@@ -46,6 +46,7 @@ input:focus,select:focus,textarea:focus{
 /* Password strength bar */
 .pw-strength{height:10px;background:#e6e9ee;border-radius:6px;overflow:hidden;margin-top:6px}
 .pw-bar{width:6%;height:100%;background:var(--accent);transition:width .18s ease}
+.char-count{margin-top:8px;font-size:0.9rem;color:var(--muted)}
 
 /* Choices layout for checkboxes/radios */
 .choices{display:flex;flex-wrap:wrap;gap:12px;align-items:center}

@@ -6,6 +6,7 @@
   <title>Registro - GlobalImport S.A.</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="registro.css">
+  <script src="validaciones.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,7 +25,7 @@
     <h1>Registro</h1>
     <p class="lead">Completa tus datos para registrarte en GlobalImport S.A.</p>
 
-    <form id="registroForm">
+    <form id="registroForm" novalidate>
       <!-- Sección A: Datos Personales -->
       <section class="form-section">
         <h2>Sección A — Datos Personales</h2>
@@ -155,6 +156,7 @@
           <div class="field field-full">
             <label for="referencia">Referencia o instrucciones adicionales (max 200 caracteres)</label>
             <textarea id="referencia" name="referencia" maxlength="200" rows="3"></textarea>
+            <p class="char-count"><span id="referenciaCount">0</span>/200 caracteres</p>
           </div>
         </div>
       </section>
@@ -227,47 +229,5 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Password strength simple indicator
-    const pw = document.getElementById('password');
-    const pwBar = document.getElementById('pwBar');
-    pw.addEventListener('input', () => {
-      const val = pw.value;
-      let score = 0;
-      if (val.length >= 8) score += 30;
-      if (/[A-Z]/.test(val)) score += 20;
-      if (/[0-9]/.test(val)) score += 25;
-      if (/[^A-Za-z0-9]/.test(val)) score += 25;
-      const width = Math.min(100, score);
-      pwBar.style.width = width + '%';
-      if (width < 40) pwBar.style.background = '#ff4d4f';
-      else if (width < 70) pwBar.style.background = '#ff8a00';
-      else pwBar.style.background = '#16a34a';
-    });
-
-    // Simple form validation for matching fields
-    const form = document.getElementById('registroForm');
-    form.addEventListener('submit', (e) => {
-      const email = document.getElementById('email').value.trim();
-      const email2 = document.getElementById('email2').value.trim();
-      const password = document.getElementById('password').value;
-      const password2 = document.getElementById('password2').value;
-      if (email !== email2) {
-        e.preventDefault();
-        alert('Los correos no coinciden. Por favor verifícalos.');
-        return;
-      }
-      if (password !== password2) {
-        e.preventDefault();
-        alert('Las contraseñas no coinciden. Por favor verifícalas.');
-        return;
-      }
-      // Required checkboxes already enforced by 'required' attribute for terms/privacy
-      alert('Formulario validado (simulación). Datos listos para envío.');
-      e.preventDefault();
-    });
-  </script>
 </body>
 </html>
