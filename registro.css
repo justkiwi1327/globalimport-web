@@ -41,7 +41,9 @@ input:focus,select:focus,textarea:focus{
 }
 
 /* Clase preparada para mostrar campos con error */
-.error{border-color:var(--error) !important;box-shadow:0 6px 18px rgba(255,77,79,0.12) !important}
+.error, .campo-error{border-color:var(--error) !important;box-shadow:0 6px 18px rgba(255,77,79,0.12) !important}
+.campo-ok{border-color:#16a34a !important;box-shadow:0 6px 18px rgba(22,163,74,0.15) !important}
+.field-message{margin-top:6px;font-size:0.9rem;color:var(--error);min-height:1.2em}
 
 /* Password strength bar */
 .pw-strength{height:10px;background:#e6e9ee;border-radius:6px;overflow:hidden;margin-top:6px}
@@ -66,6 +68,14 @@ input:focus,select:focus,textarea:focus{
 @media (max-width:520px){
   input,select,textarea{font-size:1rem}
 }
+
+/* Success message container */
+.success-panel{display:none;max-width:var(--form-max-width);background:#ffffff;border:1px solid rgba(11,110,253,0.16);box-shadow:0 10px 30px rgba(11,110,253,0.12);border-radius:12px;padding:28px; text-align:center;}
+.success-panel.visible{display:block}
+.success-panel h2{margin-top:0;color:#0f172a}
+.success-panel p{color:var(--muted);margin:16px 0}
+.success-panel .btn{margin-top:16px}
+.hidden{display:none!important}
 
 /* Utility: visually hide but accessible */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
