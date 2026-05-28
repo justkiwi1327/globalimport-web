@@ -1,0 +1,70 @@
+/* Estilos específicos para el formulario de registro */
+:root{
+  --form-max-width:760px;
+  --field-gap:16px;
+  --primary: #0b6efd;
+  --accent: #ff8a00;
+  --muted: #6b7280;
+  --error: #ff4d4f;
+  --card-bg: #ffffff;
+}
+
+/* Contenedor centrado del formulario */
+main.container{display:flex;justify-content:center}
+form#registroForm{width:100%;max-width:var(--form-max-width)}
+
+.form-section{background:var(--card-bg);padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);border:1px solid rgba(2,6,23,0.03)}
+.form-section.alt{background:linear-gradient(180deg,#fff,#fbfdff)}
+.form-section h2{margin-top:0;margin-bottom:12px;font-size:1.125rem}
+
+/* Grid: dos columnas en desktop, una en mobile */
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--field-gap)}
+.field{display:flex;flex-direction:column}
+.field-full{grid-column:1 / -1}
+
+label{font-weight:600;margin-bottom:6px}
+label .req{color:var(--error);margin-left:6px}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea{
+  padding:10px 12px;border-radius:8px;border:1px solid rgba(15,23,42,0.08);background:#fff;font-size:0.975rem;outline:none;transition:box-shadow .12s ease,border-color .12s ease,transform .12s ease;width:100%;
+}
+
+/* Focus state obligatorio */
+input:focus,select:focus,textarea:focus{
+  border-color:var(--primary);box-shadow:0 6px 18px rgba(11,110,253,0.12);transform:translateY(-1px);
+}
+
+/* Clase preparada para mostrar campos con error */
+.error{border-color:var(--error) !important;box-shadow:0 6px 18px rgba(255,77,79,0.12) !important}
+
+/* Password strength bar */
+.pw-strength{height:10px;background:#e6e9ee;border-radius:6px;overflow:hidden;margin-top:6px}
+.pw-bar{width:6%;height:100%;background:var(--accent);transition:width .18s ease}
+
+/* Choices layout for checkboxes/radios */
+.choices{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.choices input{margin-right:6px}
+
+/* Buttons */
+.btn{padding:10px 14px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent}
+.btn.primary{background:var(--primary);color:#fff;border:none}
+
+/* Responsive: mobile single column */
+@media (max-width:700px){
+  .form-grid{grid-template-columns:1fr}
+  .field{width:100%}
+}
+
+/* Make inputs full width on small screens */
+@media (max-width:520px){
+  input,select,textarea{font-size:1rem}
+}
+
+/* Utility: visually hide but accessible */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}

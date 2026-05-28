@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Registro - GlobalImport S.A.</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="registro.css">
 </head>
 <body>
   <header class="site-header">
@@ -25,38 +26,38 @@
 
     <form id="registroForm">
       <!-- Sección A: Datos Personales -->
-      <section class="form-section" style="background:#fff;padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+      <section class="form-section">
         <h2>Sección A — Datos Personales</h2>
         <div class="form-grid">
-          <label>
-            Nombre completo *
-            <input type="text" name="nombre" required>
-          </label>
+          <div class="field">
+            <label for="nombre">Nombre completo <span class="req">*</span></label>
+            <input id="nombre" type="text" name="nombre" required>
+          </div>
 
-          <label>
-            Fecha de nacimiento *
-            <input type="date" name="nacimiento" required>
-          </label>
+          <div class="field">
+            <label for="nacimiento">Fecha de nacimiento <span class="req">*</span></label>
+            <input id="nacimiento" type="date" name="nacimiento" required>
+          </div>
 
-          <label>
-            Rut / Número de documento *
-            <input type="text" name="documento" required>
-          </label>
+          <div class="field">
+            <label for="documento">Rut / Número de documento <span class="req">*</span></label>
+            <input id="documento" type="text" name="documento" required>
+          </div>
 
-          <label>
-            Género
-            <select name="genero">
+          <div class="field">
+            <label for="genero">Género</label>
+            <select id="genero" name="genero">
               <option value="">-- Seleccionar --</option>
               <option>Masculino</option>
               <option>Femenino</option>
               <option>No binario</option>
               <option>Prefiero no decir</option>
             </select>
-          </label>
+          </div>
 
-          <label style="grid-column:1 / -1">
-            Nacionalidad
-            <select name="nacionalidad">
+          <div class="field field-full">
+            <label for="nacionalidad">Nacionalidad</label>
+            <select id="nacionalidad" name="nacionalidad">
               <option value="">-- Seleccionar país --</option>
               <option>Argentina</option>
               <option>Brasil</option>
@@ -67,57 +68,53 @@
               <option>España</option>
               <option>México</option>
             </select>
-          </label>
+          </div>
         </div>
       </section>
 
       <!-- Sección B: Contacto y Acceso -->
-      <section class="form-section" style="background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+      <section class="form-section alt">
         <h2>Sección B — Datos de Contacto y Acceso</h2>
         <div class="form-grid">
-          <label>
-            Correo electrónico *
-            <input type="email" name="email" id="email" required>
-          </label>
-
-          <label>
-            Confirmar correo electrónico *
-            <input type="email" name="email2" id="email2" required>
-          </label>
-
-          <label>
-            Contraseña *
-            <input type="password" name="password" id="password" required>
-          </label>
-
-          <label>
-            Confirmar contraseña *
-            <input type="password" name="password2" id="password2" required>
-          </label>
-
-          <div style="grid-column:1 / -1">
-            <label>
-              Teléfono *
-              <input type="tel" name="telefono" placeholder="+54 9 11 1234-5678" required>
-            </label>
+          <div class="field">
+            <label for="email">Correo electrónico <span class="req">*</span></label>
+            <input id="email" type="email" name="email" required>
           </div>
 
-          <div style="grid-column:1 / -1">
+          <div class="field">
+            <label for="email2">Confirmar correo electrónico <span class="req">*</span></label>
+            <input id="email2" type="email" name="email2" required>
+          </div>
+
+          <div class="field">
+            <label for="password">Contraseña <span class="req">*</span></label>
+            <input id="password" type="password" name="password" required>
+          </div>
+
+          <div class="field">
+            <label for="password2">Confirmar contraseña <span class="req">*</span></label>
+            <input id="password2" type="password" name="password2" required>
+          </div>
+
+          <div class="field field-full">
+            <label for="telefono">Teléfono <span class="req">*</span></label>
+            <input id="telefono" type="tel" name="telefono" placeholder="+54 9 11 1234-5678" required>
+          </div>
+
+          <div class="field field-full">
             <small>Indicador de fuerza de contraseña:</small>
-            <div id="pwStrength" style="height:10px;background:#e6e9ee;border-radius:6px;overflow:hidden;margin-top:6px">
-              <div id="pwBar" style="width:6%;height:100%;background:#ff8a00;transition:width .18s ease"></div>
-            </div>
+            <div id="pwStrength" class="pw-strength"><div id="pwBar" class="pw-bar"></div></div>
           </div>
         </div>
       </section>
 
       <!-- Sección C: Dirección de Entrega -->
-      <section class="form-section" style="background:#fff;padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+      <section class="form-section">
         <h2>Sección C — Dirección de Entrega</h2>
         <div class="form-grid">
-          <label>
-            País *
-            <select name="pais_entrega" required>
+          <div class="field">
+            <label for="pais_entrega">País <span class="req">*</span></label>
+            <select id="pais_entrega" name="pais_entrega" required>
               <option value="">-- Seleccionar país --</option>
               <option>Argentina</option>
               <option>Brasil</option>
@@ -128,85 +125,85 @@
               <option>España</option>
               <option>México</option>
             </select>
-          </label>
+          </div>
 
-          <label>
-            Provincia / Estado *
-            <input type="text" name="provincia" required>
-          </label>
+          <div class="field">
+            <label for="provincia">Provincia / Estado <span class="req">*</span></label>
+            <input id="provincia" type="text" name="provincia" required>
+          </div>
 
-          <label>
-            Ciudad *
-            <input type="text" name="ciudad" required>
-          </label>
+          <div class="field">
+            <label for="ciudad">Ciudad <span class="req">*</span></label>
+            <input id="ciudad" type="text" name="ciudad" required>
+          </div>
 
-          <label>
-            Calle y número *
-            <input type="text" name="calle" required>
-          </label>
+          <div class="field">
+            <label for="calle">Calle y número <span class="req">*</span></label>
+            <input id="calle" type="text" name="calle" required>
+          </div>
 
-          <label>
-            Código postal *
-            <input type="text" name="postal" required>
-          </label>
+          <div class="field">
+            <label for="postal">Código postal <span class="req">*</span></label>
+            <input id="postal" type="text" name="postal" required>
+          </div>
 
-          <label>
-            Piso y departamento
-            <input type="text" name="piso">
-          </label>
+          <div class="field">
+            <label for="piso">Piso y departamento</label>
+            <input id="piso" type="text" name="piso">
+          </div>
 
-          <label style="grid-column:1 / -1">
-            Referencia o instrucciones adicionales (max 200 caracteres)
-            <textarea name="referencia" maxlength="200" rows="3"></textarea>
-          </label>
+          <div class="field field-full">
+            <label for="referencia">Referencia o instrucciones adicionales (max 200 caracteres)</label>
+            <textarea id="referencia" name="referencia" maxlength="200" rows="3"></textarea>
+          </div>
         </div>
       </section>
 
       <!-- Sección D: Preferencias y Términos -->
-      <section class="form-section" style="background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+      <section class="form-section alt">
         <h2>Sección D — Preferencias y Términos</h2>
         <div class="form-grid">
-          <div style="grid-column:1 / -1">
+          <div class="field field-full">
             <strong>Categorías de interés</strong>
-            <div>
-              <label><input type="checkbox" name="cat" value="electronica"> Electrónica</label>
-              <label style="margin-left:12px"><input type="checkbox" name="cat" value="indumentaria"> Indumentaria</label>
-              <label style="margin-left:12px"><input type="checkbox" name="cat" value="hogar"> Hogar</label>
-              <label style="margin-left:12px"><input type="checkbox" name="cat" value="otros"> Otros</label>
+            <div class="choices">
+              <input type="checkbox" id="cat_electronica" name="cat" value="electronica"><label for="cat_electronica"> Electrónica</label>
+              <input type="checkbox" id="cat_indumentaria" name="cat" value="indumentaria"><label for="cat_indumentaria"> Indumentaria</label>
+              <input type="checkbox" id="cat_hogar" name="cat" value="hogar"><label for="cat_hogar"> Hogar</label>
+              <input type="checkbox" id="cat_otros" name="cat" value="otros"><label for="cat_otros"> Otros</label>
             </div>
           </div>
 
-          <div style="grid-column:1 / -1">
+          <div class="field field-full">
             <strong>Tipo de cliente</strong>
-            <div>
-              <label><input type="radio" name="tipo" value="consumidor" checked> Consumidor final</label>
-              <label style="margin-left:12px"><input type="radio" name="tipo" value="revendedor"> Revendedor</label>
-              <label style="margin-left:12px"><input type="radio" name="tipo" value="empresa"> Empresa</label>
+            <div class="choices">
+              <input type="radio" id="tipo_consumidor" name="tipo" value="consumidor" checked><label for="tipo_consumidor"> Consumidor final</label>
+              <input type="radio" id="tipo_revendedor" name="tipo" value="revendedor"><label for="tipo_revendedor"> Revendedor</label>
+              <input type="radio" id="tipo_empresa" name="tipo" value="empresa"><label for="tipo_empresa"> Empresa</label>
             </div>
           </div>
 
-          <label>
-            ¿Cómo nos conociste?
-            <select name="conocio">
+          <div class="field">
+            <label for="conocio">¿Cómo nos conociste?</label>
+            <select id="conocio" name="conocio">
               <option>Redes sociales</option>
               <option>Recomendación</option>
               <option>Búsqueda web</option>
               <option>Publicidad</option>
               <option>Otro</option>
             </select>
-          </label>
+          </div>
 
-          <label style="display:flex;align-items:center;gap:8px">
-            <input type="checkbox" name="newsletter"> Suscribirme al newsletter
-          </label>
+          <div class="field" style="align-items:center;display:flex;gap:8px">
+            <input type="checkbox" id="newsletter" name="newsletter"><label for="newsletter">Suscribirme al newsletter</label>
+          </div>
 
-          <label style="display:flex;align-items:center;gap:8px">
-            <input type="checkbox" id="aceptaTerminos" required> Acepto los <a href="#" onclick="alert('Términos ficticios.');return false;">Términos y Condiciones</a>
-          </label>
+          <div class="field" style="align-items:center;display:flex;gap:8px">
+            <input type="checkbox" id="aceptaTerminos" required><label for="aceptaTerminos"> Acepto los <a href="#" onclick="alert('Términos ficticios.');return false;">Términos y Condiciones</a> <span class="req">*</span></label>
+          </div>
 
-          <label style="display:flex;align-items:center;gap:8px">
-            <input type="checkbox" id="aceptaPrivacidad" required> Acepto la <a href="#" onclick="alert('Política de privacidad ficticia.');return false;">Política de Privacidad</a>
-          </label>
+          <div class="field" style="align-items:center;display:flex;gap:8px">
+            <input type="checkbox" id="aceptaPrivacidad" required><label for="aceptaPrivacidad"> Acepto la <a href="#" onclick="alert('Política de privacidad ficticia.');return false;">Política de Privacidad</a> <span class="req">*</span></label>
+          </div>
         </div>
       </section>
 
